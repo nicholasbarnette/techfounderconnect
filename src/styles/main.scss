@@ -1,0 +1,28 @@
+.hero {
+	min-height: 70vh;
+	background-color: $ui-accent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: $text-color-light;
+
+	.hero-header {
+		font-size: $font-size-xl;
+		margin-block-end: 2rem;
+		text-align: center;
+	}
+
+	.hero-subheader {
+		font-size: $font-size-lg;
+		text-align: center;
+		max-width: $layout-size-lg;
+	}
+}
+
+.about-cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-block-start: -7rem;
+}

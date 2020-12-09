@@ -1,0 +1,51 @@
+.tabs {
+	display: flex;
+	flex-direction: column;
+}
+
+.tabs-list {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.tabs-tab {
+	flex: 1 1 33%;
+	text-align: center;
+	background-color: $ui-light;
+	border-block-start: 2px solid $ui-light;
+	padding: 1rem;
+	cursor: pointer;
+	transition: background-color $animation-duration $animation-function,
+		color $animation-duration $animation-function,
+		border-color $animation-duration $animation-function;
+
+	&[aria-selected='true'] {
+		background-color: $ui-dark;
+		border-block-start-color: $ui-dark;
+		color: $text-color-light;
+
+		&:focus {
+			outline: $text-color-light 1px dotted;
+		}
+	}
+
+	&:focus {
+		outline: $text-color-dark 1px dotted;
+		outline-offset: -2px;
+	}
+}
+
+.tabs-content {
+	background-color: $ui-dark;
+	color: $text-color-light;
+	height: 400px;
+	width: 100%;
+	display: none;
+	padding: 1rem;
+
+	&[aria-hidden='false'] {
+		display: block;
+	}
+}

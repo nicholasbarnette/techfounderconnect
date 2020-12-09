@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"experimentalDecorators": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"noFallthroughCasesInSwitch": true,
+		"removeComments": false,
+		"sourceMap": true,
+		"stripInternal": true,
+		"target": "es5",
+		"lib": ["es5", "dom", "es6", "es2015.promise"],
+		"baseUrl": "./src",
+		"paths": {
+			"*": ["*"]
+		},
+		"typeRoots": ["node_modules/@types", "fixtypings"],
+		"strict": true /* Enable all strict type-checking options. */,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["**/node_modules", "**/*.spec.ts", "**/*.test.ts", "dist"]
+}
