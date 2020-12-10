@@ -37,3 +37,52 @@ window.addEventListener('load', () => {
 particlesJS.load('particles-js', './assets/particlesjs-config.json', () => {
 	console.log('callback - particles.js config loaded');
 });
+
+const checkIfInView = (el: HTMLElement, offset?: number) => {
+	const elParams = el.getBoundingClientRect();
+	const scrollPos = window.scrollY;
+	const screenHeight = window.innerHeight;
+	const overrideOffset = offset ?? 200;
+	// Scrolled into view && not above the current screen position
+	const inView =
+		scrollPos + screenHeight - overrideOffset > el.offsetTop &&
+		elParams.top > 0;
+
+	return inView;
+};
+
+window.addEventListener('scroll', () => {
+	const animatedElements = document.getElementsByClassName(
+		'will-animate-rise',
+	);
+
+	// @ts-ignore
+	for (let el of animatedElements) {
+		if (el) {
+			const classes = el.getAttribute('class')?.split(' ') ?? [];
+			if (classes.includes('animated-rise')) return;
+			if (checkIfInView(el)) {
+				el.classList.add('animated-rise');
+				el.classList.remove('will-animate-rise');
+			}
+		}
+	}
+});
+
+window.addEventListener('load', () => {
+	const animatedElements = document.getElementsByClassName(
+		'will-animate-rise',
+	);
+
+	// @ts-ignore
+	for (let el of animatedElements) {
+		if (el) {
+			const classes = el.getAttribute('class')?.split(' ') ?? [];
+			if (classes.includes('animated-rise')) return;
+			if (checkIfInView(el, 0)) {
+				el.classList.add('animated-rise');
+				el.classList.remove('will-animate-rise');
+			}
+		}
+	}
+});

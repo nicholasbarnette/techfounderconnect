@@ -1,50 +1,26 @@
-@keyframes fade-out {
+$rise-distance: 4rem;
+@keyframes rise {
 	0% {
+		transform: translate3d(0, $rise-distance, 0);
+		opacity: 0;
+	}
+	80% {
 		opacity: 1;
 	}
-	40% {
-		opacity: 0;
-	}
-	99% {
-		opacity: 0;
-		left: -100%;
-	}
 	99.9% {
-		opacity: 0;
-		left: -100%;
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
 	}
 	100% {
-		opacity: 0;
-		left: -100%;
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
 	}
 }
 
-@keyframes fade-in {
-	0% {
-		opacity: 0;
-		left: -100%;
-	}
-	1% {
-		opacity: 0;
-		left: -100%;
-	}
-	30% {
-		left: -100%;
-	}
-	70% {
-		opacity: 1;
-		left: 0;
-	}
-	99% {
-		opacity: 1;
-		left: 0;
-	}
-	99.9% {
-		opacity: 1;
-		left: 0;
-	}
-	100% {
-		opacity: 1;
-		left: 0;
-	}
+.animated-rise {
+	animation: rise 1s $animation-function 0s 1 normal forwards;
+}
+.will-animate-rise {
+	transform: translate3d(0, $rise-distance, 0);
+	opacity: 0;
 }

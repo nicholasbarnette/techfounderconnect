@@ -1,3 +1,6 @@
+$tab-color-start: #1a0531;
+$tab-color-end: #0b0313;
+
 @keyframes fade-out {
 	0% {
 		opacity: 1;
@@ -75,9 +78,10 @@
 		border-color $animation-duration-short $animation-function;
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: 0.5rem;
+	font-family: 'Montserrat', sans-serif;
 
 	&[aria-selected='true'] {
-		background-color: $ui-dark;
+		background-color: $tab-color-start;
 		border-top-color: $ui-dark;
 		color: $text-color-light;
 
@@ -96,11 +100,14 @@
 	flex: 1 1 auto;
 	position: relative;
 	width: 100%;
-	background-color: $ui-dark;
+	background-image: linear-gradient(
+		0deg,
+		$tab-color-end 0%,
+		$tab-color-start 100%
+	);
 }
 
 .tabs-content {
-	background-color: $ui-dark;
 	color: $text-color-light;
 	width: 100%;
 	height: 100%;
@@ -108,6 +115,10 @@
 	position: absolute;
 	top: 0;
 	opacity: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
 	&[aria-hidden='false'] {
 		animation: fade-in $animation-duration-long $animation-function 0s 1
