@@ -3,17 +3,19 @@ $text-color-dark: #000000;
 
 $ui-light: #ffffff;
 $ui-dark: #221f22;
-$ui-accent: #7b507c;
+$ui-accent: #4b0087;
 $ui-border: #cdcdcd;
 
 $box-shadow: 3px 2px 11px -1px rgba(0, 0, 0, 0.71);
 
+$layout-size-xl: 1000px;
 $layout-size-lg: 650px;
 $layout-size-md: 400px;
 
 $font-size-xl: 3rem;
-$font-size-lg: 2rem;
+$font-size-lg: 1.75rem;
 $font-size-md: 1.25rem;
 
-$animation-duration: 0.25s;
-$animation-function: linear;
+$animation-duration-short: 250ms;
+$animation-duration-long: 1.5s;
+$animation-function: cubic-bezier(0.39, 0.11, 0.32, 1);

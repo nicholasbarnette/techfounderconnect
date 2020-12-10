@@ -1,0 +1,35 @@
+$portrait-image-size: 10rem;
+
+.portrait-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.portrait {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1rem;
+}
+
+.portrait-image {
+	height: $portrait-image-size;
+	width: $portrait-image-size;
+	border-radius: 100%;
+	background-color: $ui-dark;
+	border: 1px solid $ui-border;
+	margin-block-end: 2rem;
+}
+
+.portrait-name {
+	margin-block-end: 0.5rem;
+	text-align: center;
+	font-size: $font-size-lg;
+}
+
+.portrait-title {
+	text-align: center;
+	font-size: $font-size-md;
+}

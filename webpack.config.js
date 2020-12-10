@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const babelLoader = {
@@ -65,11 +65,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
         }),
-		// new CopyWebpackPlugin({
-		// 	patterns: [
-		// 		{ from: './src/assets/img', to: './assets/img' },
-		// 	],
-		// }),
+		new CopyWebpackPlugin({
+			patterns: [
+				{ from: './src/assets', to: './assets' },
+			],
+		}),
 	],
 	devServer: {
 		historyApiFallback: true,

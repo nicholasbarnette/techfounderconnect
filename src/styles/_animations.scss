@@ -1,0 +1,50 @@
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 0;
+	}
+	99% {
+		opacity: 0;
+		left: -100%;
+	}
+	99.9% {
+		opacity: 0;
+		left: -100%;
+	}
+	100% {
+		opacity: 0;
+		left: -100%;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		left: -100%;
+	}
+	1% {
+		opacity: 0;
+		left: -100%;
+	}
+	30% {
+		left: -100%;
+	}
+	70% {
+		opacity: 1;
+		left: 0;
+	}
+	99% {
+		opacity: 1;
+		left: 0;
+	}
+	99.9% {
+		opacity: 1;
+		left: 0;
+	}
+	100% {
+		opacity: 1;
+		left: 0;
+	}
+}

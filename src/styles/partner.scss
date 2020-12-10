@@ -1,0 +1,32 @@
+$partner-image-size: 3rem;
+
+.partner-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	max-width: $layout-size-xl;
+	margin: 0 auto;
+}
+
+.partner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 33%;
+	flex: 1 1 33%;
+	padding: 5rem 1rem;
+	box-sizing: border-box;
+}
+
+.partner-image {
+	height: $partner-image-size;
+	width: $partner-image-size;
+	background-color: $ui-dark;
+	border: 1px solid $ui-light;
+	margin-block-end: 1rem;
+}
+
+.partner-name {
+	text-align: center;
+}

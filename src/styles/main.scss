@@ -1,22 +1,32 @@
 .hero {
-	min-height: 70vh;
-	background-color: $ui-accent;
+	min-height: 100vh;
+	background: $ui-accent;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	color: $text-color-light;
+	position: relative;
+
+	.particles-js-canvas-el {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
 	.hero-header {
 		font-size: $font-size-xl;
 		margin-block-end: 2rem;
 		text-align: center;
+		z-index: 1;
 	}
 
 	.hero-subheader {
 		font-size: $font-size-lg;
 		text-align: center;
 		max-width: $layout-size-lg;
+		margin-block-end: 6rem;
+		z-index: 1;
 	}
 }
 
@@ -25,4 +35,26 @@
 	flex-direction: row;
 	justify-content: space-around;
 	margin-block-start: -7rem;
+	transform: translate3d(0, 0, 0);
+}
+
+.section-header {
+	text-align: center;
+	font-size: $font-size-xl;
+	margin-block-end: 4rem;
+}
+
+.section {
+	margin: 6rem 0;
+	padding: 2rem;
+
+	&.program {
+		padding: 0;
+		margin: 8rem 0;
+	}
+
+	&.contact {
+		background-color: $ui-dark;
+		color: $text-color-light;
+	}
 }

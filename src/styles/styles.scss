@@ -4,6 +4,7 @@ html {
 	font-size: 16px !important;
 	height: 100%;
 	width: 100%;
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
 	height: 100%;
 	width: 100%;
 	color: $text-color-dark;
+	line-height: 1.75;
 }
 
 h1,
@@ -21,6 +23,7 @@ h4,
 h5,
 h6 {
 	margin: 0;
+	font-family: 'Montserrat', sans-serif;
 }
 
 ul,
@@ -36,4 +39,7 @@ li {
 /******* IMPORTS *******/
 @import './main.scss';
 @import './card.scss';
+@import './divider.scss';
+@import './partner.scss';
+@import './portrait.scss';
 @import './tabs.scss';

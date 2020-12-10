@@ -33,3 +33,7 @@ window.addEventListener('load', () => {
 		});
 	}
 });
+
+particlesJS.load('particles-js', './assets/particlesjs-config.json', () => {
+	console.log('callback - particles.js config loaded');
+});

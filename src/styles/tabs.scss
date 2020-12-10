@@ -1,6 +1,59 @@
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 0;
+	}
+	99% {
+		opacity: 0;
+		left: -100%;
+	}
+	99.9% {
+		opacity: 0;
+		left: -100%;
+	}
+	100% {
+		opacity: 0;
+		left: -100%;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		left: -100%;
+	}
+	1% {
+		opacity: 0;
+		left: -100%;
+	}
+	30% {
+		left: -100%;
+	}
+	70% {
+		opacity: 1;
+		left: 0;
+	}
+	99% {
+		opacity: 1;
+		left: 0;
+	}
+	99.9% {
+		opacity: 1;
+		left: 0;
+	}
+	100% {
+		opacity: 1;
+		left: 0;
+	}
+}
+
 .tabs {
 	display: flex;
 	flex-direction: column;
+	position: relative;
+	height: 40rem;
 }
 
 .tabs-list {
@@ -17,13 +70,15 @@
 	border-block-start: 2px solid $ui-light;
 	padding: 1rem;
 	cursor: pointer;
-	transition: background-color $animation-duration $animation-function,
-		color $animation-duration $animation-function,
-		border-color $animation-duration $animation-function;
+	transition: background-color $animation-duration-short $animation-function,
+		color $animation-duration-short $animation-function,
+		border-color $animation-duration-short $animation-function;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
 
 	&[aria-selected='true'] {
 		background-color: $ui-dark;
-		border-block-start-color: $ui-dark;
+		border-top-color: $ui-dark;
 		color: $text-color-light;
 
 		&:focus {
@@ -37,15 +92,30 @@
 	}
 }
 
+.tabs-content-container {
+	flex: 1 1 auto;
+	position: relative;
+	width: 100%;
+	background-color: $ui-dark;
+}
+
 .tabs-content {
 	background-color: $ui-dark;
 	color: $text-color-light;
-	height: 400px;
 	width: 100%;
-	display: none;
+	height: 100%;
 	padding: 1rem;
+	position: absolute;
+	top: 0;
+	opacity: 0;
 
 	&[aria-hidden='false'] {
-		display: block;
+		animation: fade-in $animation-duration-long $animation-function 0s 1
+			normal forwards;
+	}
+	&[aria-hidden='true'] {
+		animation: fade-out $animation-duration-long $animation-function 0s 1
+			normal forwards;
+		z-index: 1;
 	}
 }
