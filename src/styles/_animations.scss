@@ -24,3 +24,19 @@ $rise-distance: 4rem;
 	transform: translate3d(0, $rise-distance, 0);
 	opacity: 0;
 }
+
+@keyframes floating {
+	0% {
+		transform: translate(0, 0px);
+	}
+	50% {
+		transform: translate(0, 15px);
+	}
+	100% {
+		transform: translate(0, -0px);
+	}
+}
+
+.animated-float {
+	animation: floating 1.5s ease-in-out 0s infinite normal forwards;
+}

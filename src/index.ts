@@ -32,6 +32,18 @@ window.addEventListener('load', () => {
 			}
 		});
 	}
+
+	const hero = document.getElementById('particles-js');
+	console.log(hero?.getBoundingClientRect());
+	document
+		.getElementById('hero-continue-icon')
+		?.addEventListener('click', () => {
+			window.scrollTo({
+				top: hero?.getBoundingClientRect().bottom,
+				left: 0,
+				behavior: 'smooth',
+			});
+		});
 });
 
 particlesJS.load('particles-js', './assets/particlesjs-config.json', () => {
@@ -52,11 +64,10 @@ const checkIfInView = (el: HTMLElement, offset?: number) => {
 };
 
 window.addEventListener('scroll', () => {
-	const animatedElements = document.getElementsByClassName(
-		'will-animate-rise',
-	);
+	const animatedElements = Array.from(
+		document.getElementsByClassName('will-animate-rise'),
+	) as HTMLElement[];
 
-	// @ts-ignore
 	for (let el of animatedElements) {
 		if (el) {
 			const classes = el.getAttribute('class')?.split(' ') ?? [];
@@ -70,19 +81,18 @@ window.addEventListener('scroll', () => {
 });
 
 window.addEventListener('load', () => {
-	const animatedElements = document.getElementsByClassName(
-		'will-animate-rise',
+	const animatedElements = Array.from(
+		document.getElementsByClassName('will-animate-rise-onload'),
 	);
 
-	// @ts-ignore
+	console.log(animatedElements);
+
 	for (let el of animatedElements) {
 		if (el) {
 			const classes = el.getAttribute('class')?.split(' ') ?? [];
 			if (classes.includes('animated-rise')) return;
-			if (checkIfInView(el, 0)) {
-				el.classList.add('animated-rise');
-				el.classList.remove('will-animate-rise');
-			}
+			el.classList.add('animated-rise');
+			el.classList.remove('will-animate-rise-onload');
 		}
 	}
 });

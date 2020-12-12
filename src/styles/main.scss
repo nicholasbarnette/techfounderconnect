@@ -1,5 +1,5 @@
 .hero {
-	min-height: 100vh;
+	min-height: 100%;
 	background: $ui-dark;
 	display: flex;
 	flex-direction: column;
@@ -28,6 +28,19 @@
 		margin-block-end: 6rem;
 		z-index: 1;
 	}
+
+	.hero-continue-icon {
+		position: absolute;
+		bottom: 4rem;
+		cursor: pointer;
+		z-index: 1;
+		height: 3rem;
+		width: 3rem;
+
+		> path {
+			stroke: $text-color-light;
+		}
+	}
 }
 
 .about-cards {
@@ -54,6 +67,7 @@
 
 .section {
 	padding: 7rem 2rem;
+	box-sizing: border-box;
 
 	&.program {
 		padding: 0;
