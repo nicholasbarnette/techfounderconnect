@@ -70,7 +70,6 @@ $tab-color-end: #0b0313;
 	flex: 1 1 33%;
 	text-align: center;
 	background-color: $ui-light;
-	border-block-start: 2px solid $ui-light;
 	padding: 1rem;
 	cursor: pointer;
 	transition: background-color $animation-duration-short $animation-function,
@@ -81,8 +80,7 @@ $tab-color-end: #0b0313;
 	font-family: 'Montserrat', sans-serif;
 
 	&[aria-selected='true'] {
-		background-color: $tab-color-start;
-		border-top-color: $ui-dark;
+		background-color: $ui-accent-dark;
 		color: $text-color-light;
 
 		&:focus {
@@ -100,11 +98,7 @@ $tab-color-end: #0b0313;
 	flex: 1 1 auto;
 	position: relative;
 	width: 100%;
-	background-image: linear-gradient(
-		0deg,
-		$tab-color-end 0%,
-		$tab-color-start 100%
-	);
+	background-image: $ui-dark;
 }
 
 .tabs-content {

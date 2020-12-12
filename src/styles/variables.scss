@@ -2,8 +2,9 @@ $text-color-light: #ffffff;
 $text-color-dark: #000000;
 
 $ui-light: #ffffff;
-$ui-dark: linear-gradient(0deg, #4b0087 0%, #300d56 100%);
+$ui-accent-dark: #300d56;
 $ui-accent: #4b0087;
+$ui-dark: linear-gradient(0deg, $ui-accent 0%, $ui-accent-dark 100%);
 $ui-inverse: #2a69cb;
 $ui-border: #cdcdcd;
 
