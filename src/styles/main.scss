@@ -54,7 +54,7 @@
 .section-header {
 	text-align: center;
 	font-size: $font-size-xl;
-	margin-block-end: 2rem;
+	margin-block-end: 3rem;
 }
 
 .section-body {
@@ -86,27 +86,41 @@
 	color: $text-color-light;
 	min-height: 30rem;
 
-	.contact-content {
-		max-width: $layout-size-xl;
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-
-		.contact-content-inputs {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-			column-gap: 2rem;
-			row-gap: 2rem;
-			margin-block-end: 2rem;
-
-			.input {
-				flex: 1 1 auto;
-			}
-		}
-
-		.button {
-			align-self: flex-end;
-			margin-block-start: 2rem;
+	.contact-email {
+		&,
+		&:hover,
+		&:active,
+		&:visited {
+			color: $text-color-light;
 		}
 	}
+
+	// .contact-content {
+	// 	max-width: $layout-size-xl;
+	// 	margin: 0 auto;
+	// 	display: flex;
+	// 	flex-direction: column;
+
+	// 	.contact-content-inputs {
+	// 		display: grid;
+	// 		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+	// 		column-gap: 2rem;
+	// 		row-gap: 2rem;
+	// 		margin-block-end: 2rem;
+	// 	}
+
+	// 	.contact-content-input {
+	// 		display: grid;
+	// 		row-gap: 0.25rem;
+
+	// 		.input {
+	// 			flex: 1 1 auto;
+	// 		}
+	// 	}
+
+	// 	.button {
+	// 		align-self: flex-end;
+	// 		margin-block-start: 2rem;
+	// 	}
+	// }
 }

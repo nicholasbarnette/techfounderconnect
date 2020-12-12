@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
 		.getElementById('hero-continue-icon')
 		?.addEventListener('click', () => {
 			window.scrollTo({
-				top: hero?.getBoundingClientRect().bottom,
+				top: hero?.getBoundingClientRect().height,
 				left: 0,
 				behavior: 'smooth',
 			});

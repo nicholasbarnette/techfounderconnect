@@ -38,13 +38,13 @@
 	width: 100%;
 }
 
-.program-note-icon {
-	height: 4rem;
-	width: 4rem;
-	background-color: #cdcdcd;
-	margin-inline-end: 4rem;
-	flex-shrink: 0;
-}
+// .program-note-icon {
+// 	height: 4rem;
+// 	width: 4rem;
+// 	background-color: #cdcdcd;
+// 	margin-inline-end: 4rem;
+// 	flex-shrink: 0;
+// }
 
 .program-note-body {
 	display: flex;
@@ -86,4 +86,14 @@
 
 .program-note-text {
 	font-size: $font-size-md;
+}
+
+@media only screen and (max-width: 768px) {
+	.program-note-title {
+		font-size: calc(#{$font-size-md} * 0.85);
+	}
+
+	.program-note-text {
+		font-size: calc(#{$font-size-md} * 0.75);
+	}
 }
