@@ -70,8 +70,14 @@
 	box-sizing: border-box;
 
 	&.program {
-		padding: 0;
-		margin-block-start: 8rem;
+		padding-inline-start: 0;
+		padding-inline-end: 0;
+
+		.section-header,
+		.section-body {
+			padding-inline-start: 2rem;
+			padding-inline-end: 2rem;
+		}
 	}
 }
 
@@ -87,17 +93,14 @@
 		flex-direction: column;
 
 		.contact-content-inputs {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+			column-gap: 2rem;
+			row-gap: 2rem;
 			margin-block-end: 2rem;
 
 			.input {
 				flex: 1 1 auto;
-
-				&:not(:first-child) {
-					margin-inline-start: 4rem;
-				}
 			}
 		}
 

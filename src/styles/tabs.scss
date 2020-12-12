@@ -118,7 +118,7 @@ $tab-color-end: #0b0313;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	overflow-y: auto;
 
 	&[aria-hidden='false'] {
 		animation: fade-in $animation-duration-long $animation-function 0s 1
