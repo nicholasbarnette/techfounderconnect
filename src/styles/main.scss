@@ -1,6 +1,6 @@
 .hero {
 	min-height: 100vh;
-	background: $ui-accent;
+	background: $ui-dark;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -41,20 +41,55 @@
 .section-header {
 	text-align: center;
 	font-size: $font-size-xl;
-	margin-block-end: 4rem;
+	margin-block-end: 2rem;
+}
+
+.section-body {
+	max-width: $layout-size-lg;
+	margin: 0 auto;
+	margin-block-end: 8rem;
+	text-align: center;
+	font-size: $font-size-md;
 }
 
 .section {
-	margin: 6rem 0;
-	padding: 2rem;
+	padding: 7rem 2rem;
 
 	&.program {
 		padding: 0;
-		margin: 8rem 0;
+		margin-block-start: 8rem;
 	}
+}
 
-	&.contact {
-		background-color: $ui-dark;
-		color: $text-color-light;
+.section.contact {
+	background-image: $ui-dark;
+	color: $text-color-light;
+	min-height: 30rem;
+
+	.contact-content {
+		max-width: $layout-size-xl;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+
+		.contact-content-inputs {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			margin-block-end: 2rem;
+
+			.input {
+				flex: 1 1 auto;
+
+				&:not(:first-child) {
+					margin-inline-start: 4rem;
+				}
+			}
+		}
+
+		.button {
+			align-self: flex-end;
+			margin-block-start: 2rem;
+		}
 	}
 }

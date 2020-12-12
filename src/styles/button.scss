@@ -1,0 +1,26 @@
+.button {
+	background-color: $ui-inverse;
+	border: 1px solid $ui-inverse;
+	border-radius: 0.25rem;
+	padding: 0.5rem 1rem;
+	color: $text-color-light;
+	font-size: $font-size-md;
+	cursor: pointer;
+	transition: background-color $animation-duration-short $animation-function,
+		border-color $animation-duration-short $animation-function;
+
+	&:hover {
+		background-color: darken($ui-inverse, 10%);
+		border-color: darken($ui-inverse, 10%);
+	}
+
+	&:active {
+		background-color: darken($ui-inverse, 15%);
+		border-color: darken($ui-inverse, 15%);
+	}
+
+	&:focus {
+		outline: $text-color-light 1px dotted;
+		outline-offset: -3px;
+	}
+}

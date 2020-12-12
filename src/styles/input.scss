@@ -1,0 +1,23 @@
+.input,
+.textarea {
+	border: 1px solid $text-color-light;
+	background-color: transparent;
+	color: $text-color-light;
+	border-radius: 1px;
+	font-size: $font-size-md;
+	padding: 0.5rem 0.75rem;
+	font-family: 'Nunito Sans', sans-serif;
+
+	&:focus {
+		border-color: lighten($ui-inverse, 15%);
+		outline: none;
+	}
+
+	&::placeholder {
+		color: transparentize($text-color-light, 0.4);
+	}
+}
+
+.textarea {
+	resize: none;
+}

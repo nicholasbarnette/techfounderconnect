@@ -21,6 +21,9 @@ $portrait-image-size: 10rem;
 	background-color: $ui-dark;
 	border: 1px solid $ui-border;
 	margin-block-end: 2rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+	box-shadow: $box-shadow-md;
 }
 
 .portrait-name {

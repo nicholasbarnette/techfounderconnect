@@ -30,7 +30,6 @@ module.exports = {
 		path: path.join(__dirname, '/dist'),
 		filename: '[name].js',
 		chunkFilename: '[chunkhash].bundle.js',
-		publicPath: './',
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js'],

@@ -2,11 +2,15 @@ $text-color-light: #ffffff;
 $text-color-dark: #000000;
 
 $ui-light: #ffffff;
-$ui-dark: #130e13;
+$ui-dark: linear-gradient(0deg, #4b0087 0%, #300d56 100%);
 $ui-accent: #4b0087;
+$ui-inverse: #2a69cb;
 $ui-border: #cdcdcd;
 
-$box-shadow: 3px 2px 11px -1px rgba(0, 0, 0, 0.71);
+$box-shadow-lg: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+$box-shadow-md: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+	rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+	rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 
 $layout-size-xl: 1000px;
 $layout-size-lg: 650px;
@@ -14,7 +18,7 @@ $layout-size-md: 400px;
 
 $font-size-xl: 3rem;
 $font-size-lg: 1.75rem;
-$font-size-md: 1.25rem;
+$font-size-md: 1.15rem;
 
 $animation-duration-short: 250ms;
 $animation-duration-long: 1.5s;

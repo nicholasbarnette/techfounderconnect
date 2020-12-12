@@ -43,10 +43,25 @@ li {
 	list-style: none;
 }
 
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(13deg, $ui-border 0%, $ui-border 14%);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 3px;
+}
+
 /******* IMPORTS *******/
 @import './main.scss';
+@import './button.scss';
 @import './card.scss';
 @import './divider.scss';
+@import './input.scss';
 @import './partner.scss';
 @import './portrait.scss';
 @import './program-note.scss';
