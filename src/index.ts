@@ -34,7 +34,6 @@ window.addEventListener('load', () => {
 	}
 
 	const hero = document.getElementById('particles-js');
-	console.log(hero?.getBoundingClientRect());
 	document
 		.getElementById('hero-continue-icon')
 		?.addEventListener('click', () => {
@@ -46,9 +45,7 @@ window.addEventListener('load', () => {
 		});
 });
 
-particlesJS.load('particles-js', './assets/particlesjs-config.json', () => {
-	console.log('callback - particles.js config loaded');
-});
+particlesJS.load('particles-js', './assets/particlesjs-config.json', () => {});
 
 const checkIfInView = (el: HTMLElement, offset?: number) => {
 	const elParams = el.getBoundingClientRect();
@@ -84,8 +81,6 @@ window.addEventListener('load', () => {
 	const animatedElements = Array.from(
 		document.getElementsByClassName('will-animate-rise-onload'),
 	);
-
-	console.log(animatedElements);
 
 	for (let el of animatedElements) {
 		if (el) {
