@@ -43,18 +43,18 @@
 	}
 }
 
-.about-cards {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	margin-block-start: -7rem;
-	transform: translate3d(0, 0, 0);
-}
-
 .section-header {
 	text-align: center;
 	font-size: $font-size-xl;
 	margin-block-end: 3rem;
+}
+
+.section-subheader {
+	max-width: $layout-size-lg;
+	margin: 0 auto;
+	margin-block-end: 2rem;
+	text-align: center;
+	font-size: $font-size-md;
 }
 
 .section-body {
