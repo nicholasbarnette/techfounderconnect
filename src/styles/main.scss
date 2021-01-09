@@ -19,6 +19,7 @@
 		margin-block-end: 2rem;
 		text-align: center;
 		z-index: 1;
+		text-shadow: $text-shadow;
 	}
 
 	.hero-subheader {
@@ -27,6 +28,7 @@
 		max-width: $layout-size-lg;
 		margin-block-end: 6rem;
 		z-index: 1;
+		text-shadow: $text-shadow;
 	}
 
 	.hero-continue-icon {
@@ -77,6 +79,12 @@
 		.section-body {
 			padding-inline-start: 2rem;
 			padding-inline-end: 2rem;
+		}
+	}
+
+	&.partners {
+		.section-body {
+			margin-block-end: 0;
 		}
 	}
 }
