@@ -146,6 +146,19 @@ window.addEventListener('load', () => {
 			const el = document.getElementById(l);
 			if (!el) return;
 
+			// Close the overlay if necessary
+			const n = document.getElementById('navigation-container');
+			if (n) {
+				n.classList.remove('navigation-container-open');
+			}
+			const t = document.getElementById('navigation-toggle');
+			if (t) {
+				t.classList.remove('navigation-toggle-open');
+			}
+			if (n || t) {
+				navigationOpen = false;
+			}
+
 			// Start scroll
 			window.scrollTo({
 				top: window.scrollY + el?.getBoundingClientRect().y,
@@ -177,4 +190,26 @@ window.addEventListener('load', () => {
 			}
 		});
 	}
+});
+
+/**
+ * Navigation on smaller devices
+ */
+let navigationOpen = false;
+window.addEventListener('load', () => {
+	const el = document.getElementById('navigation-toggle');
+	if (!el) return;
+	el.addEventListener('click', () => {
+		const n = document.getElementById('navigation-container');
+		const t = document.getElementById('navigation-toggle');
+		if (!n || !t) return;
+		if (!navigationOpen) {
+			n.classList.add('navigation-container-open');
+			t.classList.add('navigation-toggle-open');
+		} else {
+			n.classList.remove('navigation-container-open');
+			t.classList.remove('navigation-toggle-open');
+		}
+		navigationOpen = !navigationOpen;
+	});
 });
