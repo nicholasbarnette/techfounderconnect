@@ -163,7 +163,6 @@ const handleNavigationAction = (a: HTMLElement) => {
 			clearInterval(interval);
 		}
 		iterations++;
-		console.log('test');
 	}, 100);
 
 	// Update the active link
