@@ -7,14 +7,14 @@
 	align-items: center;
 	color: $text-color-light;
 	position: relative;
-	padding-bottom: 100%;
+	padding-block-end: 100%;
 	position: relative;
 	margin-block-end: 16%;
 
 	.particles-js-canvas-el {
 		position: absolute;
-		top: 0;
-		left: 0;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		min-height: calc(100% + 20rem);
 	}
 
@@ -37,7 +37,7 @@
 
 	.hero-continue-icon {
 		position: absolute;
-		bottom: 4rem;
+		inset-block-end: 4rem;
 		cursor: pointer;
 		z-index: 1;
 		height: 3rem;
@@ -56,7 +56,7 @@
 		display: inline-block;
 		position: absolute;
 		inset-block-start: 100%;
-		left: 0;
+		inset-inline-start: 0;
 		width: 100%;
 
 		> path {

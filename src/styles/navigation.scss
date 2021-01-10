@@ -3,8 +3,8 @@
 	flex-direction: column;
 	padding: 1rem 3rem;
 	position: fixed;
-	top: 0;
-	left: 0;
+	inset-block-start: 0;
+	inset-inline-start: 0;
 	width: 100%;
 	z-index: 100;
 	box-sizing: border-box;
@@ -73,9 +73,9 @@
 	&:before {
 		content: '';
 		position: absolute;
-		bottom: 0px;
-		left: 0px;
-		right: 0px;
+		inset-block-end: 0;
+		inset-inline-start: 0;
+		inset-inline-end: 0;
 		height: 2px;
 		background-color: $ui-light;
 		transform-origin: right bottom;
@@ -134,8 +134,8 @@
 		background-color: $ui-accent-dark;
 		box-sizing: border-box;
 		position: absolute;
-		left: 0;
-		top: 0;
+		inset-inline-start: 0;
+		inset-block-start: 0;
 		height: 0;
 		transition: height $animation-duration-short $animation-function;
 		overflow: hidden;

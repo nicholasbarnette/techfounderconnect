@@ -35,7 +35,7 @@
 		width: 4px;
 		height: 100%;
 		position: absolute;
-		right: -4px;
+		inset-inline-end: -4px;
 		inset-block-start: 0;
 		transition: background-color $animation-duration-short
 			$animation-function;
@@ -143,7 +143,7 @@
 			height: 4px;
 			position: absolute;
 			inset-block-start: 100%;
-			left: 0;
+			inset-inline-start: 0;
 		}
 
 		&[data-selected='true'] {
