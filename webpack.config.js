@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const postcssLogical = require('postcss-logical');
 
 const babelLoader = {
 	loader: 'babel-loader',
@@ -50,7 +51,17 @@ module.exports = {
                 test: /\.s?css$/,
                 use: [
                     { loader: 'style-loader' },
-                    { loader: 'css-loader', options: { modules: false, sourceMap: true } },
+					{ loader: 'css-loader', options: { modules: false, sourceMap: true } },
+					{
+						loader: 'postcss-loader', 
+						options: {
+							postcssOptions: {
+								plugins: [
+									"postcss-logical"
+								]
+							} 
+						} 
+					},
                     { loader: 'sass-loader', options: { sourceMap: true } },
                 ],
             }

@@ -9,8 +9,9 @@
 .event-header {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	justify-content: space-between;
+	margin-block-end: 1rem;
 }
 
 .event-title {
@@ -26,6 +27,7 @@
 
 .event-body {
 	font-size: $font-size-xs;
+	margin-block-end: 1rem;
 }
 
 .event-footer {
