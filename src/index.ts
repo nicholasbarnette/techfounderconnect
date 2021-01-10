@@ -89,10 +89,7 @@ const handleNavigationUpdates = () => {
 	if (!navigation || !hero) return;
 
 	// Check inversion
-	if (
-		window.scrollY + navigation?.getBoundingClientRect().height >=
-		hero?.getBoundingClientRect().height
-	) {
+	if (window.scrollY >= hero?.getBoundingClientRect().height) {
 		navigation.classList.add('navigation-inverted');
 	} else {
 		navigation.classList.remove('navigation-inverted');
@@ -246,7 +243,7 @@ window.addEventListener('load', () => {
 /**
  * Add tab click behavior
  */
-const tabs = ['technology', 'business', 'entrepreneurship'];
+const tabs = ['technology', 'entrepreneurship' /*'business'*/];
 const updateTab = (t: HTMLElement) => {
 	for (let t1 of tabs) {
 		document.getElementById(t1)?.setAttribute('data-selected', 'false');

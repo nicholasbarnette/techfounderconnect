@@ -93,6 +93,8 @@
 	&.program {
 		padding-inline-start: 0;
 		padding-inline-end: 0;
+		display: flex;
+		flex-direction: column;
 
 		.section-header,
 		.section-body {
