@@ -1,48 +1,24 @@
 import './styles/styles.scss';
 
-type Tab = 'tab-1' | 'tab-2' | 'tab-3';
-const tabs: Tab[] = ['tab-1', 'tab-2', 'tab-3'];
-const updateTabs = (selectedTab: Tab) => {
-	for (let t of tabs) {
-		if (selectedTab === t) {
-			document.getElementById(t)?.setAttribute('aria-selected', 'true');
-			document.getElementById(t)?.setAttribute('aria-expanded', 'true');
-			document
-				.getElementById(`${t}-content`)
-				?.setAttribute('aria-hidden', 'false');
-		} else {
-			document.getElementById(t)?.setAttribute('aria-selected', 'false');
-			document.getElementById(t)?.setAttribute('aria-expanded', 'false');
-			document
-				.getElementById(`${t}-content`)
-				?.setAttribute('aria-hidden', 'true');
-		}
-	}
-};
-
-window.addEventListener('load', () => {
-	for (let t of tabs) {
-		const tab = document.getElementById(t);
-		if (!tab) continue;
-		tab.addEventListener('click', () => updateTabs(t));
-		tab.addEventListener('keypress', (evt) => {
-			if (evt.code === 'Space' || evt.code === 'Enter') {
-				updateTabs(t);
-				evt.stopPropagation();
-			}
-		});
-	}
-
+const handleHeroScroll = () => {
 	const hero = document.getElementById('particles-js');
-	document
-		.getElementById('hero-continue-icon')
-		?.addEventListener('click', () => {
-			window.scrollTo({
-				top: hero?.getBoundingClientRect().height,
-				left: 0,
-				behavior: 'smooth',
-			});
-		});
+	window.scrollTo({
+		top: hero?.getBoundingClientRect().height,
+		left: 0,
+		behavior: 'smooth',
+	});
+};
+window.addEventListener('load', () => {
+	const i = document.getElementById('hero-continue-icon');
+	if (!i) return;
+	i.addEventListener('click', () => handleHeroScroll());
+	i.addEventListener('keydown', (evt: KeyboardEvent) => {
+		if (evt.code === 'Enter' || evt.code === 'Space') {
+			evt.preventDefault();
+			evt.stopPropagation();
+			handleHeroScroll();
+		}
+	});
 });
 
 particlesJS.load('particles-js', './assets/particlesjs-config.json', () => {});
@@ -99,7 +75,14 @@ window.addEventListener('load', () => {
  * Check if the navigation bar needs to change styling
  */
 let navigationScrolling = false;
-const sections = ['mission', 'program', 'attendees', 'team', 'contact'];
+const sections = [
+	'mission',
+	'program',
+	'conferences',
+	'attendees',
+	'team',
+	'contact',
+];
 const handleNavigationUpdates = () => {
 	const navigation = document.getElementById('navigation');
 	const hero = document.getElementById('particles-js');
@@ -134,61 +117,91 @@ const handleNavigationUpdates = () => {
 };
 window.addEventListener('scroll', handleNavigationUpdates);
 window.addEventListener('load', handleNavigationUpdates);
+
+const handleNavigationAction = (a: HTMLElement) => {
+	navigationScrolling = true;
+	const l = a.getAttribute('data-section');
+	if (!l) return;
+	const el = document.getElementById(l);
+	if (!el) return;
+
+	// Close the overlay if necessary
+	const n = document.getElementById('navigation-container');
+	if (n) {
+		n.classList.remove('navigation-container-open');
+	}
+	const t = document.getElementById('navigation-toggle');
+	if (t) {
+		t.classList.remove('navigation-toggle-open');
+	}
+	if (n || t) {
+		navigationOpen = false;
+	}
+	if (window.innerWidth < 768) {
+		const lnks = Array.from(
+			document.getElementsByClassName('navigation-link'),
+		) as HTMLElement[];
+		for (let l of lnks) {
+			l.setAttribute('tabindex', '-1');
+		}
+	}
+
+	// Start scroll
+	window.scrollTo({
+		top: window.scrollY + el?.getBoundingClientRect().y,
+		left: 0,
+		behavior: 'smooth',
+	});
+
+	// Reset scrolling
+	const interval = setInterval(() => {
+		if (
+			el?.getBoundingClientRect().y === 0 ||
+			document.body.scrollHeight - window.innerHeight === window.scrollY
+		) {
+			navigationScrolling = false;
+			clearInterval(interval);
+		}
+	}, 100);
+
+	// Update the active link
+	for (let s of sections) {
+		const lnk = document.getElementById(`${s}-link`);
+		if (!lnk) continue;
+		if (s === l) {
+			lnk.classList.add('navigation-link-active');
+		} else {
+			lnk.classList.remove('navigation-link-active');
+		}
+	}
+};
 window.addEventListener('load', () => {
 	const lnks = Array.from(
 		document.getElementsByClassName('navigation-link'),
 	) as HTMLElement[];
 	for (let a of lnks) {
-		a.addEventListener('click', () => {
-			navigationScrolling = true;
-			const l = a.getAttribute('data-section');
-			if (!l) return;
-			const el = document.getElementById(l);
-			if (!el) return;
-
-			// Close the overlay if necessary
-			const n = document.getElementById('navigation-container');
-			if (n) {
-				n.classList.remove('navigation-container-open');
-			}
-			const t = document.getElementById('navigation-toggle');
-			if (t) {
-				t.classList.remove('navigation-toggle-open');
-			}
-			if (n || t) {
-				navigationOpen = false;
-			}
-
-			// Start scroll
-			window.scrollTo({
-				top: window.scrollY + el?.getBoundingClientRect().y,
-				left: 0,
-				behavior: 'smooth',
-			});
-
-			// Reset scrolling
-			const interval = setInterval(() => {
-				if (
-					el?.getBoundingClientRect().y === 0 ||
-					document.body.scrollHeight - window.innerHeight ===
-						window.scrollY
-				) {
-					navigationScrolling = false;
-					clearInterval(interval);
-				}
-			}, 100);
-
-			// Update the active link
-			for (let s of sections) {
-				const lnk = document.getElementById(`${s}-link`);
-				if (!lnk) continue;
-				if (s === l) {
-					lnk.classList.add('navigation-link-active');
-				} else {
-					lnk.classList.remove('navigation-link-active');
-				}
+		a.addEventListener('click', () => handleNavigationAction(a));
+		a.addEventListener('keydown', (evt: KeyboardEvent) => {
+			if (evt.code === 'Enter' || evt.code === 'Space') {
+				evt.preventDefault();
+				evt.stopPropagation();
+				handleNavigationAction(a);
 			}
 		});
+	}
+});
+
+/**
+ * Handle taking menu items out of the tab flow on load
+ */
+window.addEventListener('load', () => {
+	if (window.innerWidth < 768) {
+		const lnks = Array.from(
+			document.getElementsByClassName('navigation-link'),
+		) as HTMLElement[];
+		for (let l of lnks) {
+			l.setAttribute('tabindex', '-1');
+		}
 	}
 });
 
@@ -196,20 +209,67 @@ window.addEventListener('load', () => {
  * Navigation on smaller devices
  */
 let navigationOpen = false;
+const navigationToggle = () => {
+	const n = document.getElementById('navigation-container');
+	const t = document.getElementById('navigation-toggle');
+	if (!n || !t) return;
+	if (!navigationOpen) {
+		n.classList.add('navigation-container-open');
+		t.classList.add('navigation-toggle-open');
+	} else {
+		n.classList.remove('navigation-container-open');
+		t.classList.remove('navigation-toggle-open');
+	}
+	if (window.innerWidth <= 768) {
+		const lnks = Array.from(
+			document.getElementsByClassName('navigation-link'),
+		) as HTMLElement[];
+		for (let l of lnks) {
+			l.setAttribute('tabindex', navigationOpen ? '-1' : '0');
+		}
+	}
+	navigationOpen = !navigationOpen;
+};
 window.addEventListener('load', () => {
 	const el = document.getElementById('navigation-toggle');
 	if (!el) return;
-	el.addEventListener('click', () => {
-		const n = document.getElementById('navigation-container');
-		const t = document.getElementById('navigation-toggle');
-		if (!n || !t) return;
-		if (!navigationOpen) {
-			n.classList.add('navigation-container-open');
-			t.classList.add('navigation-toggle-open');
-		} else {
-			n.classList.remove('navigation-container-open');
-			t.classList.remove('navigation-toggle-open');
+	el.addEventListener('click', navigationToggle);
+	el.addEventListener('keydown', (evt: KeyboardEvent) => {
+		if (evt.code === 'Enter' || evt.code === 'Space') {
+			evt.preventDefault();
+			evt.stopPropagation();
+			navigationToggle();
 		}
-		navigationOpen = !navigationOpen;
 	});
+});
+
+/**
+ * Add tab click behavior
+ */
+const tabs = ['technology', 'business', 'entrepreneurship'];
+const updateTab = (t: HTMLElement) => {
+	for (let t1 of tabs) {
+		document.getElementById(t1)?.setAttribute('data-selected', 'false');
+		document
+			.getElementById(`${t1}-tab`)
+			?.setAttribute('data-selected', 'false');
+	}
+	t.setAttribute('data-selected', 'true');
+	const id = t.getAttribute('id');
+	document.getElementById(`${id}-tab`)?.setAttribute('data-selected', 'true');
+};
+window.addEventListener('load', () => {
+	const tabArray = Array.from(
+		document.getElementsByClassName('tabs-tab'),
+	) as HTMLElement[];
+	for (let t of tabArray) {
+		t.addEventListener('click', () => updateTab(t));
+		t.addEventListener('keydown', (evt: KeyboardEvent) => {
+			if (evt.code === 'Enter' || evt.code === 'Space') {
+				evt.preventDefault();
+				evt.stopPropagation();
+				updateTab(t);
+			}
+		});
+	}
 });

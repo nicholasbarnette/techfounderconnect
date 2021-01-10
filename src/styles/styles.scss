@@ -45,8 +45,8 @@ li {
 }
 
 ::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
+	width: 5px;
+	height: 5px;
 }
 ::-webkit-scrollbar-thumb {
 	background: linear-gradient(13deg, $ui-border 0%, $ui-border 14%);
@@ -61,7 +61,9 @@ li {
 @import './main.scss';
 @import './button.scss';
 @import './divider.scss';
+@import './event.scss';
 @import './input.scss';
 @import './navigation.scss';
 @import './partner.scss';
 @import './portrait.scss';
+@import './tabs.scss';

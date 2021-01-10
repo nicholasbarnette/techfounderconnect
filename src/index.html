@@ -36,19 +36,22 @@
 		<div class="navigation-container" id="navigation-container">
 			<a class="navigation-link navigation-link-home" href="/">TFC</a>
 			<ul class="navigation-links">
-				<li class="navigation-link" id="mission-link" data-section="mission">
+				<li class="navigation-link" id="mission-link" data-section="mission" tabindex="0">
 					Mission
 				</li>
-				<li class="navigation-link" id="program-link" data-section="program">
+				<li class="navigation-link" id="program-link" data-section="program" tabindex="0">
 					Program
 				</li>
-				<li class="navigation-link" id="attendees-link" data-section="attendees">
+				<li class="navigation-link" id="conferences-link" data-section="conferences" tabindex="0">
+					Conferences
+				</li>
+				<li class="navigation-link" id="attendees-link" data-section="attendees" tabindex="0">
 					Attendees
 				</li>
-				<li class="navigation-link" id="team-link" data-section="team">
+				<li class="navigation-link" id="team-link" data-section="team" tabindex="0">
 					Team
 				</li>
-				<li class="navigation-link" id="contact-link" data-section="contact">
+				<li class="navigation-link" id="contact-link" data-section="contact" tabindex="0">
 					Contact
 				</li>
 			</ul>
@@ -60,11 +63,14 @@
 			Where passion, talent, and expertise meet.
 		</h2>
 		<svg id="hero-continue-icon" class="hero-continue-icon animated-float" width="32" height="32"
-			viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+			viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" tabindex="0">
 			<path d="M3.00049 14.5L15.7944 26.3462C16.1887 26.7113 16.801 26.6995 17.1809 26.3196L29.0005 14.5"
 				stroke="white" stroke-width="2" stroke-linecap="round" />
 			<path d="M3.00049 6L15.7944 17.8462C16.1887 18.2113 16.801 18.1995 17.1809 17.8196L29.0005 6" stroke="white"
 				stroke-width="2" stroke-linecap="round" />
+		</svg>
+		<svg class="hero-wave" viewBox="0 0 500 500">
+			<path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"></path>
 		</svg>
 	</section>
 	<section class="section mission" id="mission">
@@ -95,6 +101,158 @@
 			Your contributions will partially be used for philanthropy and we will ensure that we are enacting positive
 			change in our communities.
 		</p>
+	</section>
+	<hr class="divider will-animate-rise" />
+	<section class="section conferences" id="conferences">
+		<h3 class="section-header will-animate-rise">Upcoming Conferences</h3>
+		<p class="section-body will-animate-rise">
+			We try to provide conferences every month in the following content areas. If you find something of interest,
+			we would love for you to join us!
+		</p>
+		<div class="tabs">
+			<ul class="tabs-list">
+				<li class="tabs-tab" id="technology" data-selected="true" tabindex="0">Technology</li>
+				<li class="tabs-tab" id="business" data-selected="false" tabindex="0">Business</li>
+				<li class="tabs-tab" id="entrepreneurship" data-selected="false" tabindex="0">Entrepreneurship</li>
+			</ul>
+			<div class="tabs-content">
+				<div class="tabs-content-inner" id="technology-tab" data-selected="true">
+					<p class="event-date">January 30th, 2021</p>
+					<div class="event">
+						<div class="event-header">
+							<h6 class="event-title">Presentation One</h6>
+							<p class="event-presenter">Presenter One</p>
+						</div>
+						<p class="event-body">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						<div class="event-footer">
+							<p>Time: 3:30pm EST</p>
+						</div>
+					</div>
+					<div class="event">
+						<div class="event-header">
+							<h6 class="event-title">Presentation Two</h6>
+							<p class="event-presenter">Presenter Two</p>
+						</div>
+						<p class="event-body">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						<div class="event-footer">
+							<p>Time: 4:00pm EST</p>
+						</div>
+					</div>
+					<div class="event">
+						<div class="event-header">
+							<h6 class="event-title">Presentation Three</h6>
+							<p class="event-presenter">Presenter Three</p>
+						</div>
+						<p class="event-body">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						<div class="event-footer">
+							<p>Time: 4:30pm EST</p>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-content-inner" id="business-tab" data-selected="false">
+					<p class="event-date">January 31st, 2021</p>
+					<div class="event">
+						<div class="event-header">
+							<h6 class="event-title">Presentation One</h6>
+							<p class="event-presenter">Presenter One</p>
+						</div>
+						<p class="event-body">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						<div class="event-footer">
+							<p>Time: 3:30pm EST</p>
+						</div>
+					</div>
+					<div class="event">
+						<div class="event-header">
+							<h6 class="event-title">Presentation Two</h6>
+							<p class="event-presenter">Presenter Two</p>
+						</div>
+						<p class="event-body">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						<div class="event-footer">
+							<p>Time: 4:00pm EST</p>
+						</div>
+					</div>
+					<div class="event">
+						<div class="event-header">
+							<h6 class="event-title">Presentation Three</h6>
+							<p class="event-presenter">Presenter Three</p>
+						</div>
+						<p class="event-body">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						<div class="event-footer">
+							<p>Time: 4:30pm EST</p>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-content-inner" id="entrepreneurship-tab" data-selected="false">
+					<p class="event-date">February 1st, 2021</p>
+					<div class="event">
+						<div class="event-header">
+							<h6 class="event-title">Presentation One</h6>
+							<p class="event-presenter">Presenter One</p>
+						</div>
+						<p class="event-body">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						<div class="event-footer">
+							<p>Time: 3:30pm EST</p>
+						</div>
+					</div>
+					<div class="event">
+						<div class="event-header">
+							<h6 class="event-title">Presentation Two</h6>
+							<p class="event-presenter">Presenter Two</p>
+						</div>
+						<p class="event-body">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						<div class="event-footer">
+							<p>Time: 4:00pm EST</p>
+						</div>
+					</div>
+					<div class="event">
+						<div class="event-header">
+							<h6 class="event-title">Presentation Three</h6>
+							<p class="event-presenter">Presenter Three</p>
+						</div>
+						<p class="event-body">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						<div class="event-footer">
+							<p>Time: 4:30pm EST</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 	<hr class="divider will-animate-rise" />
 	<section class="section partners" id="attendees">
@@ -167,6 +325,11 @@
 			</div>
 		</div>
 	</section>
+	<div class="contact-wave-container">
+		<svg class="contact-wave" viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+			<path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+		</svg>
+	</div>
 	<section class="section contact" id="contact">
 		<h3 class="section-header will-animate-rise">Contact</h3>
 		<p class="section-body will-animate-rise">

@@ -1,5 +1,5 @@
 .hero {
-	min-height: 100%;
+	min-height: 70%;
 	background: $ui-dark;
 	display: flex;
 	flex-direction: column;
@@ -7,11 +7,15 @@
 	align-items: center;
 	color: $text-color-light;
 	position: relative;
+	padding-bottom: 100%;
+	position: relative;
+	margin-block-end: 16%;
 
 	.particles-js-canvas-el {
 		position: absolute;
 		top: 0;
 		left: 0;
+		min-height: calc(100% + 20rem);
 	}
 
 	.hero-header {
@@ -41,6 +45,21 @@
 
 		> path {
 			stroke: $text-color-light;
+		}
+
+		&:focus {
+			outline: 1px dotted $text-color-light;
+		}
+	}
+
+	.hero-wave {
+		display: inline-block;
+		position: absolute;
+		inset-block-start: 100%;
+		inset-inline-start: 0;
+
+		> path {
+			fill: $ui-accent;
 		}
 	}
 }
@@ -89,10 +108,25 @@
 	}
 }
 
+.contact-wave-container {
+	height: 10rem;
+	overflow: hidden;
+
+	.contact-wave {
+		height: 100%;
+		width: 100%;
+
+		> path {
+			fill: $ui-accent-dark;
+		}
+	}
+}
+
 .section.contact {
 	background-image: $ui-dark;
 	color: $text-color-light;
 	min-height: 30rem;
+	position: relative;
 
 	.contact-email {
 		&,
@@ -100,6 +134,10 @@
 		&:active,
 		&:visited {
 			color: $text-color-light;
+		}
+
+		&:focus {
+			outline: 1px dotted $text-color-light;
 		}
 	}
 
