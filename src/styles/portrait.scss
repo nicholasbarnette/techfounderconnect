@@ -5,7 +5,7 @@ $portrait-image-size: 15rem;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(15rem, 450px));
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 1fr;
 	row-gap: 6rem;
 	column-gap: 4rem;
 	justify-content: center;
@@ -28,6 +28,12 @@ $portrait-image-size: 15rem;
 	background-repeat: no-repeat;
 	background-size: contain;
 	box-shadow: $box-shadow-md;
+	overflow: hidden;
+
+	& > * {
+		max-height: 100%;
+		max-width: 100%;
+	}
 }
 
 .portrait-name {

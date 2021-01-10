@@ -1,5 +1,5 @@
 .hero {
-	min-height: 100%;
+	min-height: 70%;
 	background: $ui-dark;
 	display: flex;
 	flex-direction: column;
@@ -7,11 +7,15 @@
 	align-items: center;
 	color: $text-color-light;
 	position: relative;
+	padding-bottom: 100%;
+	position: relative;
+	margin-block-end: 16%;
 
 	.particles-js-canvas-el {
 		position: absolute;
 		top: 0;
 		left: 0;
+		min-height: calc(100% + 20rem);
 	}
 
 	.hero-header {
@@ -19,6 +23,7 @@
 		margin-block-end: 2rem;
 		text-align: center;
 		z-index: 1;
+		text-shadow: $text-shadow;
 	}
 
 	.hero-subheader {
@@ -27,6 +32,7 @@
 		max-width: $layout-size-lg;
 		margin-block-end: 6rem;
 		z-index: 1;
+		text-shadow: $text-shadow;
 	}
 
 	.hero-continue-icon {
@@ -40,21 +46,36 @@
 		> path {
 			stroke: $text-color-light;
 		}
-	}
-}
 
-.about-cards {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	margin-block-start: -7rem;
-	transform: translate3d(0, 0, 0);
+		&:focus {
+			outline: 1px dotted $text-color-light;
+		}
+	}
+
+	.hero-wave {
+		display: inline-block;
+		position: absolute;
+		inset-block-start: 100%;
+		inset-inline-start: 0;
+
+		> path {
+			fill: $ui-accent;
+		}
+	}
 }
 
 .section-header {
 	text-align: center;
 	font-size: $font-size-xl;
 	margin-block-end: 3rem;
+}
+
+.section-subheader {
+	max-width: $layout-size-lg;
+	margin: 0 auto;
+	margin-block-end: 2rem;
+	text-align: center;
+	font-size: $font-size-md;
 }
 
 .section-body {
@@ -72,11 +93,33 @@
 	&.program {
 		padding-inline-start: 0;
 		padding-inline-end: 0;
+		display: flex;
+		flex-direction: column;
 
 		.section-header,
 		.section-body {
 			padding-inline-start: 2rem;
 			padding-inline-end: 2rem;
+		}
+	}
+
+	&.partners {
+		.section-body {
+			margin-block-end: 0;
+		}
+	}
+}
+
+.contact-wave-container {
+	height: 10rem;
+	overflow: hidden;
+
+	.contact-wave {
+		height: 100%;
+		width: 100%;
+
+		> path {
+			fill: $ui-accent-dark;
 		}
 	}
 }
@@ -85,6 +128,7 @@
 	background-image: $ui-dark;
 	color: $text-color-light;
 	min-height: 30rem;
+	position: relative;
 
 	.contact-email {
 		&,
@@ -92,6 +136,10 @@
 		&:active,
 		&:visited {
 			color: $text-color-light;
+		}
+
+		&:focus {
+			outline: 1px dotted $text-color-light;
 		}
 	}
 

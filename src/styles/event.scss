@@ -1,0 +1,36 @@
+.event {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+
+.event-header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.event-title {
+	text-align: start;
+	flex-grow: 1;
+	font-size: $font-size-md;
+}
+
+.event-presenter {
+	text-align: end;
+	font-size: $font-size-xs;
+}
+
+.event-body {
+	font-size: $font-size-xs;
+}
+
+.event-footer {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	font-size: $font-size-xs;
+}

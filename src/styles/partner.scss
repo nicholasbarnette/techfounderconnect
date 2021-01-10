@@ -1,4 +1,4 @@
-$partner-image-size: 3rem;
+$partner-image-size: 10rem;
 
 .partner-container {
 	display: flex;
@@ -14,6 +14,7 @@ $partner-image-size: 3rem;
 	flex-direction: column;
 	align-items: center;
 	max-width: 33%;
+	min-width: 10rem;
 	flex: 1 1 33%;
 	padding: 3rem 1rem;
 	box-sizing: border-box;
@@ -22,9 +23,17 @@ $partner-image-size: 3rem;
 .partner-image {
 	height: $partner-image-size;
 	width: $partner-image-size;
-	background-color: $ui-dark;
 	border: 1px solid $ui-light;
 	margin-block-end: 1rem;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	& > * {
+		max-height: 100%;
+		max-width: 100%;
+	}
 }
 
 .partner-name {
