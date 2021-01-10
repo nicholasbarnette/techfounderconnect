@@ -151,14 +151,19 @@ const handleNavigationAction = (a: HTMLElement) => {
 	});
 
 	// Reset scrolling
+	let iterations = 0;
 	const interval = setInterval(() => {
 		if (
 			el?.getBoundingClientRect().y === 0 ||
-			document.body.scrollHeight - window.innerHeight === window.scrollY
+			document.body.scrollHeight - window.innerHeight ===
+				window.scrollY ||
+			iterations > 10
 		) {
 			navigationScrolling = false;
 			clearInterval(interval);
 		}
+		iterations++;
+		console.log('test');
 	}, 100);
 
 	// Update the active link
