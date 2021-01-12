@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
 let navigationScrolling = false;
 const sections = [
 	'mission',
-	'program',
+	// 'program',
 	'conferences',
 	'attendees',
 	'team',
