@@ -1,8 +1,8 @@
 {
-    "articles": [
-        {
-            "path": "article1.html",
-            "title": "Article 1"
-        }
-    ]
+	"articles": [
+		{
+			"path": "./shared/__example__.html",
+			"title": "Example"
+		}
+	]
 }

@@ -6,13 +6,36 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssLogical = require('postcss-logical');
 
 const articles = require('./src/articles/articles.json');
+const usedTitles = new Set();
+const usedFiles = new Set();
 const articleHTML = articles.articles.map((article) => {
+
+	// Ensure the path is an HTML file
 	if (!article.path.endsWith('.html')) return;
+
+	// Ensure the path exists
 	const p = path.resolve(__dirname, './src/articles/', article.path);
 	if (!fs.existsSync(p)) return;
+
+	// Ensure the file hasn't been used before
+	if (usedFiles.has(p)) {
+		throw Error(`Duplicate file usage detected: '${p}'.`);
+	} else {
+		usedFiles.add(p);
+	}
+
+	// Ensure the title hasn't been used before
+	const title = article.title.toLowerCase().replace(/\s/g, '-');
+	if (usedTitles.has(title)) {
+		throw Error(`Duplicate title detected: '${title}'.`)
+	} else {
+		usedTitles.add(title);
+	}
+
+	// Add the article to webpack to be processed
 	return new HtmlWebpackPlugin({
 		template: path.resolve(__dirname, './src/articles/', article.path),
-		filename: `${article.title.toLowerCase().replace(/\s/g, '-')}.html`,
+		filename: `${title}.html`,
 		chunks: ['article'],
 		title: `Tech Founder Connect | ${article.title}`,
 		favicon: './src/assets/img/favicon.ico',
