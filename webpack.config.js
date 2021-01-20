@@ -4,6 +4,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssLogical = require('postcss-logical');
 
+
+const articlePages = ['article1'];
+const articleHTML = articlePages.map((page) => {
+	return new HtmlWebpackPlugin({
+		template: `./src/articles/${page}.html`,
+		filename: `${page}.html`,
+		chunks: ['article']
+		// favicon: './src/assets/favicon.ico',
+	})
+});
+
 const babelLoader = {
 	loader: 'babel-loader',
 	options: {
@@ -25,7 +36,7 @@ const babelLoader = {
 };
 
 module.exports = {
-    entry: './src/index',
+    entry: {main: './src/index', article: './src/articles/shared/article'},
     mode: 'production',
 	output: {
 		path: path.join(__dirname, '/dist'),
@@ -71,7 +82,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
 			// favicon: './src/assets/favicon.ico',
-        }),
+			chunks: ['main']
+		}),
+		...articleHTML,
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
         }),
