@@ -1,17 +1,21 @@
 const path = require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssLogical = require('postcss-logical');
 
-
-const articlePages = ['article1'];
-const articleHTML = articlePages.map((page) => {
+const articles = require('./src/articles/articles.json');
+const articleHTML = articles.articles.map((article) => {
+	if (!article.path.endsWith('.html')) return;
+	const p = path.resolve(__dirname, './src/articles/', article.path);
+	if (!fs.existsSync(p)) return;
 	return new HtmlWebpackPlugin({
-		template: `./src/articles/${page}.html`,
-		filename: `${page}.html`,
-		chunks: ['article']
-		// favicon: './src/assets/favicon.ico',
+		template: path.resolve(__dirname, './src/articles/', article.path),
+		filename: `${article.title.toLowerCase().replace(/\s/g, '-')}.html`,
+		chunks: ['article'],
+		title: `Tech Founder Connect | ${article.title}`,
+		favicon: './src/assets/img/favicon.ico',
 	})
 });
 
@@ -81,7 +85,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
-			// favicon: './src/assets/favicon.ico',
+			favicon: './src/assets/img/favicon.ico',
 			chunks: ['main']
 		}),
 		...articleHTML,
