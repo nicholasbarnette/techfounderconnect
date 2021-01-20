@@ -25,3 +25,17 @@ window.addEventListener('load', () => {
 });
 
 particlesJS.load('hero', './assets/particlesjs-config.json', () => {});
+
+// Add return home action
+window.addEventListener('load', () => {
+	const i = document.getElementById('return-home');
+	if (!i) return;
+	i.addEventListener('click', () => (window.location.href = '/'));
+	i.addEventListener('keydown', (evt: KeyboardEvent) => {
+		if (evt.code === 'Enter' || evt.code === 'Space') {
+			evt.preventDefault();
+			evt.stopPropagation();
+			window.location.href = '/';
+		}
+	});
+});

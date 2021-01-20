@@ -111,6 +111,12 @@ module.exports = {
 			favicon: './src/assets/img/favicon.ico',
 			chunks: ['main']
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/404.html',
+			filename: `404.html`,
+			favicon: './src/assets/img/favicon.ico',
+			chunks: ['main']
+		}),
 		...articleHTML,
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',

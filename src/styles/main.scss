@@ -16,6 +16,7 @@
 		inset-block-start: 0;
 		inset-inline-start: 0;
 		min-height: calc(100% + 20rem);
+		pointer-events: none;
 	}
 
 	.hero-header {
@@ -173,4 +174,34 @@
 	// 		margin-block-start: 2rem;
 	// 	}
 	// }
+}
+
+.section.hero.lost {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	.hero-header {
+		font-size: $font-size-lg;
+	}
+
+	> .lost-image {
+		height: 80%;
+		width: 80%;
+		max-height: 10rem;
+		max-width: 10rem;
+
+		> path {
+			fill: $text-color-light;
+		}
+	}
+
+	> *:not(canvas) {
+		z-index: 10;
+		margin: 2rem 0;
+	}
 }
