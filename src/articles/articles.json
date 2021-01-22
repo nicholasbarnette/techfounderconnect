@@ -1,0 +1,8 @@
+{
+	"articles": [
+		{
+			"path": "./shared/__example__.html",
+			"title": "Example"
+		}
+	]
+}

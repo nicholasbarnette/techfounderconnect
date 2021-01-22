@@ -1,0 +1,333 @@
+@import '../../styles/variables.scss';
+@import '../../styles/animations.scss';
+@import '../../styles/navigation.scss';
+@import '../../styles/divider.scss';
+
+html {
+	font-size: 16px !important;
+	height: 100%;
+	width: 100%;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: $text-color-dark;
+	line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-family: 'Open sans', sans-serif;
+}
+
+a,
+p,
+span {
+	margin: 0;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(13deg, $ui-border 0%, $ui-border 14%);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 3px;
+}
+
+// Article Styles
+$portrait-image-size: 7.5rem;
+
+.article-progress {
+	width: 0%;
+	position: fixed;
+	inset-block-start: 0;
+	height: 0.5rem;
+	z-index: 2;
+	background-color: $ui-accent;
+	transition: width 100ms linear;
+}
+
+.article-hero {
+	min-height: 70%;
+	background: $ui-accent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: $text-color-light;
+	position: relative;
+	padding-block-end: 0%;
+	position: relative;
+	margin-block-end: 16%;
+
+	.article-wave {
+		display: inline-block;
+		position: absolute;
+		inset-block-start: 100%;
+		inset-inline-start: 0;
+		width: 100%;
+		pointer-events: none;
+
+		> path {
+			fill: $ui-accent;
+		}
+	}
+}
+
+.article-header {
+	font-size: $font-size-xl;
+	max-width: $layout-size-xl;
+	margin-block-end: 2rem;
+	text-align: center;
+	padding: 0 2rem;
+	margin-block-start: 4rem;
+}
+
+.article-subheader {
+	font-size: $font-size-lg;
+	max-width: $layout-size-xl;
+	text-align: center;
+	padding: 0 2rem;
+	margin-block-end: 4rem;
+}
+
+.article-info {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	max-width: $layout-size-lg;
+	margin: 0 auto;
+	padding: 4rem 2rem;
+}
+
+.article-author-image {
+	border-radius: 50%;
+	margin-inline-end: 2rem;
+	overflow: hidden;
+	height: $portrait-image-size;
+	width: $portrait-image-size;
+	background-color: $ui-dark;
+	border: 1px solid $ui-border;
+	flex-shrink: 0;
+}
+
+.article-info-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.article-author {
+	font-weight: 700;
+	font-size: $font-size-md;
+}
+
+.article-body {
+	max-width: $layout-size-lg;
+	margin: 0 auto;
+	padding: 0 2rem 6rem 2rem;
+}
+
+.article-text {
+	margin: 0;
+	font-size: $font-size-md;
+	text-align: start;
+
+	&:first-child {
+		margin-block-start: 0;
+	}
+	&:last-child {
+		margin-block-end: 0;
+	}
+
+	& + .article-text {
+		margin-block-start: 4rem;
+	}
+}
+
+.article-quote-block {
+	display: flex;
+	flex-direction: column;
+	margin: 6rem 0;
+}
+
+.article-quote {
+	font-style: italic;
+	font-weight: 700;
+	margin: 0 auto;
+}
+
+.article-quote-attribute {
+	align-self: flex-end;
+	margin-inline-end: 4rem;
+	margin-block-start: 1rem;
+
+	&:before {
+		content: '\2014';
+		margin-inline-end: 1rem;
+	}
+}
+
+.article-asset {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 6rem 0;
+}
+
+.article-asset-aspect-ratio {
+	position: relative;
+	height: 0;
+	width: 100%;
+	padding-block-start: 56.25%;
+
+	> * {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.article-image {
+	max-height: 500px;
+	max-width: 500px;
+}
+
+.article-image-description {
+	text-align: center;
+	font-size: $font-size-sm;
+	margin-block-start: 2rem;
+}
+
+.article-link {
+	text-decoration: underline;
+	font-weight: 700;
+	color: $text-color-dark;
+
+	&:hover,
+	&:focus,
+	&:visited {
+		color: $text-color-dark;
+	}
+
+	&:focus {
+		outline: 1px dotted $text-color-dark;
+	}
+}
+
+.article-biography-section {
+	max-width: $layout-size-lg;
+	margin: 0 auto;
+	padding: 0 2rem 6rem 2rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding-block-start: 4rem;
+}
+
+.article-biography-image {
+	border-radius: 50%;
+	overflow: hidden;
+	height: $portrait-image-size * 1.5;
+	width: $portrait-image-size * 1.5;
+	background-color: $ui-dark;
+	border: 1px solid $ui-border;
+	flex-shrink: 0;
+	margin-inline-end: 2rem;
+}
+
+.article-biography {
+	display: flex;
+	flex-direction: column;
+}
+
+.article-biography-author {
+	font-weight: 700;
+	margin-block-end: 1rem;
+	font-size: $font-size-md;
+}
+
+.article-socials {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-block-end: 1rem;
+	align-items: center;
+}
+
+.article-social {
+	align-self: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-inline-end: 1rem;
+
+	& > svg > path {
+		fill: $text-color-dark;
+	}
+}
+
+.article-heading {
+	margin-block-start: 4rem;
+	font-size: $font-size-lg;
+	margin-block-end: 2rem;
+
+	& + .article-text {
+		margin-block-start: 0;
+	}
+}
+
+// Article Helper Classes
+.article-bold {
+	font-weight: 700;
+}
+
+.article-italic {
+	font-style: italic;
+}
+
+@media only screen and (max-width: 767px) {
+	.article-biography-section {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.article-biography-image {
+		margin-block-end: 2rem;
+	}
+
+	.article-biography {
+		align-items: center;
+	}
+}

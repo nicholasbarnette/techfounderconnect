@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="description" content="We combine exceptional technical talent and years of technical experience to help extraordinary founders
+	build their dreams.">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Nunito+Sans&display=swap" rel="stylesheet">
+
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZJFNYF4DW"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-9ZJFNYF4DW');
+	</script> -->
+</head>
+
+<body>
+    <div class="article-progress" aria-hidden="true" id="article-progress"></div>
+    <nav class="navigation" id="navigation">
+        <button class="navigation-toggle" type="button" id="navigation-toggle" title="Toggle navigation menu">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31 25H5V31H31V25Z" fill="white" />
+                <path d="M31 15H5V21H31V15Z" fill="white" />
+                <path d="M31 5H5V11H31V5Z" fill="white" />
+            </svg>
+        </button>
+        <div class="navigation-container" id="navigation-container">
+            <a class="navigation-link navigation-link-home" href="/">
+                <svg class="navigation-logo" width="213" height="75" viewBox="0 0 213 75" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M32.8438 1.75C37.6875 1.75 42.7812 1.92188 48.125 2.26562C53.4688 2.60938 59.0938 3.28125 65 4.28125V16.1875C62.9062 15.5938 60.5156 15.0312 57.8281 14.5C55.5156 14.0625 52.7344 13.6406 49.4844 13.2344C46.2344 12.8281 42.5625 12.5625 38.4688 12.4375V73.0938H27.3125V12.4375C23.2188 12.5625 19.5469 12.8281 16.2969 13.2344C13.0469 13.6406 10.2656 14.0625 7.95312 14.5C5.26562 15.0312 2.875 15.5938 0.78125 16.1875V4.28125C6.625 3.28125 12.25 2.60938 17.6562 2.26562C23.0625 1.92188 28.125 1.75 32.8438 1.75Z" />
+                    <path
+                        d="M106.062 1.65625C110.875 1.65625 115.953 1.82812 121.297 2.17188C126.672 2.51562 132.312 3.1875 138.219 4.1875V16.0938C135.594 15.3438 132.938 14.7344 130.25 14.2656C127.562 13.7656 124.859 13.375 122.141 13.0938C119.453 12.8125 116.766 12.6094 114.078 12.4844C111.391 12.3594 108.719 12.2812 106.062 12.25C104.781 12.25 103.359 12.2812 101.797 12.3438C100.266 12.375 98.6094 12.4375 96.8281 12.5312C95.0781 12.625 93.25 12.7656 91.3438 12.9531C89.4375 13.1406 87.5 13.375 85.5312 13.6562V30.7188H126.5V42.25H85.5312V73H74V4.1875C79.8438 3.1875 85.4531 2.51562 90.8281 2.17188C96.2344 1.82812 101.312 1.65625 106.062 1.65625Z" />
+                    <path
+                        d="M178.156 0.34375C182.875 0.34375 187.344 0.765625 191.562 1.60938C195.781 2.42188 199.453 3.57812 202.578 5.07812C205.734 6.57812 208.234 8.375 210.078 10.4688C211.922 12.5312 212.844 14.8125 212.844 17.3125V25.5625H200.469V20.9688C200.469 19.625 199.953 18.3438 198.922 17.125C197.891 15.875 196.406 14.7969 194.469 13.8906C192.562 12.9531 190.234 12.2188 187.484 11.6875C184.734 11.125 181.625 10.8438 178.156 10.8438C174.812 10.8438 171.766 11.1094 169.016 11.6406C166.266 12.1406 163.906 12.8438 161.938 13.75C159.969 14.6562 158.438 15.7344 157.344 16.9844C156.281 18.2031 155.75 19.5312 155.75 20.9688V54.0625C155.75 55.4375 156.281 56.7344 157.344 57.9531C158.438 59.1719 159.969 60.2344 161.938 61.1406C163.906 62.0156 166.266 62.7188 169.016 63.25C171.766 63.75 174.812 64 178.156 64C181.625 64 184.734 63.7344 187.484 63.2031C190.234 62.6406 192.562 61.9062 194.469 61C196.406 60.0938 197.891 59.0469 198.922 57.8594C199.953 56.6406 200.469 55.375 200.469 54.0625V49.375H212.844V57.625C212.844 59.2812 212.422 60.8594 211.578 62.3594C210.734 63.8281 209.547 65.1875 208.016 66.4375C206.516 67.6875 204.703 68.8125 202.578 69.8125C200.484 70.7812 198.141 71.625 195.547 72.3438C192.984 73.0312 190.234 73.5625 187.297 73.9375C184.359 74.3125 181.312 74.5 178.156 74.5C175 74.5 171.953 74.3125 169.016 73.9375C166.078 73.5625 163.312 73.0312 160.719 72.3438C158.156 71.625 155.812 70.7812 153.688 69.8125C151.594 68.8125 149.781 67.6875 148.25 66.4375C146.75 65.1875 145.578 63.8281 144.734 62.3594C143.891 60.8594 143.469 59.2812 143.469 57.625V17.3125C143.469 15.6562 143.891 14.0781 144.734 12.5781C145.578 11.0781 146.75 9.70312 148.25 8.45312C149.781 7.20312 151.594 6.07812 153.688 5.07812C155.812 4.07812 158.156 3.23438 160.719 2.54688C163.312 1.82812 166.078 1.28125 169.016 0.90625C171.953 0.53125 175 0.34375 178.156 0.34375Z" />
+                </svg>
+            </a>
+            <ul class="navigation-links">
+                <li class="navigation-link" id="mission-link" data-section="mission" tabindex="0">
+                    Mission
+                </li>
+                <!-- <li class="navigation-link" id="program-link" data-section="program" tabindex="0">
+					Program
+				</li> -->
+                <li class="navigation-link" id="conferences-link" data-section="conferences" tabindex="0">
+                    Conferences
+                </li>
+                <li class="navigation-link" id="attendees-link" data-section="attendees" tabindex="0">
+                    Attendees
+                </li>
+                <li class="navigation-link" id="team-link" data-section="team" tabindex="0">
+                    Team
+                </li>
+                <li class="navigation-link" id="contact-link" data-section="contact" tabindex="0">
+                    Contact
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="section article-hero" id="hero">
+        <h1 class="article-header">Super Interesting Article Title</h1>
+        <h2 class="article-subheader">
+            Article tag line... something cool goes here
+        </h2>
+        <svg class="article-wave" viewBox="0 0 500 500">
+            <path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"></path>
+        </svg>
+    </section>
+    <section class="section article-info">
+        <picture class="article-author-image">
+            <source type="image/avif" srcset="../../assets/img/YujianHeadshot.avif" height="120px" width="120px">
+            <img src="../../assets/img/YujianHeadshot.png" alt="Yujian Tang" height="120px" width="120px" />
+        </picture>
+        <div class="article-info-container">
+            <p class="article-author">Author Name</p>
+            <p class="article-published">Publish Date</p>
+        </div>
+        <div class="article-info-spacer"></div>
+    </section>
+    <section class="section article-body">
+        <h3 class="article-heading">Article Subheader</h3>
+        <p class="article-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of <a class="article-link"
+                href="https://www.lipsum.com/">Lorem Ipsum</a>.
+        </p>
+        <div class="article-quote-block">
+            <p class="article-quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <span class="article-quote-attribute">A Person</span>
+        </div>
+        <p class="article-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <div class="article-asset">
+            <picture class="article-image">
+                <source type="image/avif" srcset="../../assets/img/fox_logo.avif" height="170px" width="300px">
+                <img src="../../assets/img/fox_logo.png" alt="Fox news article" height="170px" width="300px" />
+            </picture>
+            <p class="article-image-description">
+                Image 1: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+        </div>
+        <p class="article-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <div class="article-asset">
+            <div class="article-asset-aspect-ratio">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WVkEIyEOr9E?autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p class="article-image-description">
+                Video 1: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+        </div>
+        <h3 class="article-heading">Article Subheader</h3>
+        <p class="article-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p class="article-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+        <p class="article-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </section>
+    <hr class="divider" />
+    <section class="section article-biography-section">
+        <picture class="article-biography-image">
+            <source type="image/avif" srcset="../../assets/img/YujianHeadshot.avif" height="180" width="180">
+            <img src="../../assets/img/YujianHeadshot.png" alt="Yujian Tang" height="180" width="180" />
+        </picture>
+        <div class="article-biography">
+            <p class="article-biography-author">Author Name</p>
+            <div class="article-socials">
+                <a class="article-social" href="#">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M24.047 7.73465C24.047 7.73465 25.0869 7.40363 25.7411 7.15644C26.6844 6.80006 27.1529 6.57822 27.1529 6.57822C27.1529 6.57822 27.4124 6.86733 26.3059 8.31287C25.9211 8.81555 25.0353 9.1802 25.0353 9.1802L24.047 7.73465Z" />
+                        <path
+                            d="M25.0353 9.1802C25.0353 9.1802 25.9357 9.13039 26.5882 8.96337C27.1529 8.81881 28 8.45743 28 8.45743C28 8.45743 27.4353 9.32475 26.8706 9.90297C26.4295 10.3546 25.4588 11.204 25.4588 11.204L25.0353 9.1802Z" />
+                        <path
+                            d="M5.69414 6.86733C5.69414 6.86733 6.54093 8.74654 9.64685 10.4812C12.7528 12.2158 16.141 12.3604 16.141 12.3604L19.5293 13.8059L25.0355 15.2515C25.0355 15.2515 24.3296 20.7446 18.4002 24.2139C12.4707 27.6832 6.54121 25.0812 5.97649 24.7921C5.41178 24.503 4 23.7802 4 23.7802C4 23.7802 6.25857 24.2139 8.51742 23.3465C10.7763 22.4792 11.341 21.6119 11.341 21.6119C11.341 21.6119 10.0839 21.8135 8.5177 20.7446C6.95149 19.6756 6.68211 18.1426 6.68211 18.1426C6.68211 18.1426 7.10564 18.2871 7.67035 18.2871C8.23507 18.2871 8.80005 18.1426 8.80005 18.1426C8.80005 18.1426 6.4639 17.1438 5.69386 15.8297C4.92382 14.5156 4.98797 13.0832 4.98797 13.0832C4.98797 13.0832 5.50719 13.3968 5.97622 13.5168C6.44525 13.6369 7.24682 13.6614 7.24682 13.6614C7.24682 13.6614 5.62351 12.6495 5.12915 10.6257C4.63478 8.60198 5.69414 6.86733 5.69414 6.86733Z" />
+                        <path
+                            d="M25.4588 10.9149C25.4588 13.6293 25.2862 17.5644 22.6352 17.5644C19.9842 17.5644 15.7175 13.6293 15.7175 10.9149C15.7175 8.20046 17.8666 6 20.5176 6C23.1686 6 25.4588 8.20046 25.4588 10.9149Z" />
+                    </svg>
+                </a>
+                <a class="article-social" href="#">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 9.37806C3 9.16926 3.16926 9 3.37806 9C3.45734 9 3.53462 9.02493 3.59896 9.07125L15.4157 17.5793C15.7647 17.8306 16.2353 17.8306 16.5843 17.5793L28.401 9.07125C28.4654 9.02493 28.5427 9 28.6219 9C28.8307 9 29 9.16926 29 9.37806V22C29 22.5523 28.5523 23 28 23H4C3.44772 23 3 22.5523 3 22V9.37806Z" />
+                        <path
+                            d="M4.41918 8H27.6704C27.8524 8 28 8.14755 28 8.32957C28 8.43647 27.9482 8.53672 27.8609 8.59851L16.578 16.5906C16.2317 16.8359 15.7683 16.8359 15.422 16.5906L4.13907 8.59851C4.05184 8.53672 4 8.43647 4 8.32957C4 8.14755 4.14755 8 4.32957 8H4.41918Z" />
+                    </svg>
+                </a>
+                <a class="article-social" href="#">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.3798 15.3038C18.3798 15.3038 19.4051 13.2532 22.481 12.5696C25.557 11.8861 27.9494 14.6202 27.9494 14.6202C27.9494 14.6202 29.7452 16.3291 29.7452 18.038V30H24.1899V20.0151C24.1899 20.0151 23.8481 17.0127 21.4557 17.0127C19.0633 17.0127 18.3798 19.7468 18.3798 19.7468V15.3038Z" />
+                        <path d="M3.34176 12.9114H9.49366V30H3.34176V12.9114Z" />
+                        <path d="M12.9114 12.9114H18.3797V30H12.9114V12.9114Z" />
+                        <path
+                            d="M9.83544 6.41772C9.83544 8.30528 8.30528 9.83544 6.41772 9.83544C4.53017 9.83544 3 8.30528 3 6.41772C3 4.53017 4.53017 3 6.41772 3C8.30528 3 9.83544 4.53017 9.83544 6.41772Z" />
+                    </svg>
+                </a>
+            </div>
+            <span class="article-biography-text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+            </span>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,8 +1,46 @@
 const path = require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssLogical = require('postcss-logical');
+
+const articles = require('./src/articles/articles.json');
+const usedTitles = new Set();
+const usedFiles = new Set();
+const articleHTML = articles.articles.map((article) => {
+
+	// Ensure the path is an HTML file
+	if (!article.path.endsWith('.html')) return;
+
+	// Ensure the path exists
+	const p = path.resolve(__dirname, './src/articles/', article.path);
+	if (!fs.existsSync(p)) return;
+
+	// Ensure the file hasn't been used before
+	if (usedFiles.has(p)) {
+		throw Error(`Duplicate file usage detected: '${p}'.`);
+	} else {
+		usedFiles.add(p);
+	}
+
+	// Ensure the title hasn't been used before
+	const title = article.title.toLowerCase().replace(/\s/g, '-');
+	if (usedTitles.has(title)) {
+		throw Error(`Duplicate title detected: '${title}'.`)
+	} else {
+		usedTitles.add(title);
+	}
+
+	// Add the article to webpack to be processed
+	return new HtmlWebpackPlugin({
+		template: path.resolve(__dirname, './src/articles/', article.path),
+		filename: `${title}.html`,
+		chunks: ['article'],
+		title: `Tech Founder Connect | ${article.title}`,
+		favicon: './src/assets/img/favicon.ico',
+	})
+});
 
 const babelLoader = {
 	loader: 'babel-loader',
@@ -25,7 +63,7 @@ const babelLoader = {
 };
 
 module.exports = {
-    entry: './src/index',
+    entry: {main: './src/index', article: './src/articles/shared/article'},
     mode: 'production',
 	output: {
 		path: path.join(__dirname, '/dist'),
@@ -70,8 +108,16 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
-			// favicon: './src/assets/favicon.ico',
-        }),
+			favicon: './src/assets/img/favicon.ico',
+			chunks: ['main']
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/404.html',
+			filename: `404.html`,
+			favicon: './src/assets/img/favicon.ico',
+			chunks: ['main']
+		}),
+		...articleHTML,
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
         }),
